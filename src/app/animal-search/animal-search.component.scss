@@ -1,84 +1,52 @@
-.filter-dropdowns {
-    display: flex;
-    gap: 16px;
-    padding: 16px;
-    justify-content: center; /* Centraliza os dropdowns horizontalmente */
-    align-items: center; /* Centraliza verticalmente todos os itens, incluindo o botão */
-  }
-  
-  /* Estilização dos botões */
-  .mat-raised-button {
-    border-radius: 20px; /* Deixa os botões mais arredondados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave ao botão */
-    padding: 10px 20px;
-    align-self: center; /* Garante que o botão fique alinhado ao centro vertical */
-  }
-  .adopt-button {
-    width: 100%;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    padding: 12px 24px;
-    transition: all 0.3s ease;
-  }
-  
-  .adopt-button:hover {
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Efeito de hover para o botão */
-  }
-  
-  /* Responsividade dos cards */
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centraliza os cards na tela */
-    gap: 16px;
-    padding: 16px;
-  }
-  
-  .example-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1 1 calc(25% - 32px);
-    max-width: 300px;
-    min-width: 250px;
-    max-height: 700px;
-    min-height: 500px;
-    margin: 16px;
-    border-radius: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    padding-bottom: 16px;
-  }
-  
-  @media (max-width: 1200px) {
-    .example-card {
-      flex: 1 1 calc(33.33% - 32px); /* Em telas menores, 3 cards por linha */
-    }
-  }
-  
-  @media (max-width: 900px) {
-    .example-card {
-      flex: 1 1 calc(50% - 32px); /* Em telas menores, 2 cards por linha */
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .example-card {
-      flex: 1 1 100%; /* Em telas muito pequenas, 1 card por linha */
-    }
-  }
-  
-  .card-actions {
-    display: flex;
-    justify-content: center;
-    margin-top: auto;
-    padding: 16px;
-  }
+.adopt-button {
+  width: 50%; /* Deixa o botão com 50% da largura do contêiner */
+  transition: box-shadow 0.3s ease;
+}
 
-  .load-more-container {
-    display: flex;
-    justify-content: center; /* Centraliza o botão */
-    margin: 16px 0; /* Adiciona espaçamento ao redor do botão */
+.adopt-button:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Efeito de hover para o botão */
+}
+
+.example-card {
+  flex: 1 1 calc(25% - 32px);
+  max-width: 300px;
+  min-width: 250px;
+  max-height: 700px;
+  min-height: 500px;
+  margin: 16px;
+  border-radius: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+.animal-info {
+  margin-top: 16px;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1200px) {
+  .example-card {
+    flex: 1 1 calc(33.33% - 32px); /* Em telas menores, 3 cards por linha */
   }
-  
+}
+
+@media (max-width: 900px) {
+  .example-card {
+    flex: 1 1 calc(50% - 32px); /* Em telas menores, 2 cards por linha */
+  }
+}
+
+@media (max-width: 600px) {
+  .example-card {
+    flex: 1 1 100%; /* Em telas muito pequenas, 1 card por linha */
+  }
+}
+
+.card-actions {
+  margin-top: auto;
+}
+
+.load-more-container {
+  display: flex;
+  justify-content: center; /* Centraliza o botão */
+  margin: 16px 0; /* Adiciona espaçamento ao redor do botão */
+}
