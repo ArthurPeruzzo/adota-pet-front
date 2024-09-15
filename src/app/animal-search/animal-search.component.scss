@@ -40,8 +40,10 @@
     flex-direction: column;
     justify-content: space-between;
     flex: 1 1 calc(25% - 32px);
-    max-width: 340px;
+    max-width: 300px;
     min-width: 250px;
+    max-height: 700px;
+    min-height: 500px;
     margin: 16px;
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
