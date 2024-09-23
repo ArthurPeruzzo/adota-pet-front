@@ -1,3 +1,4 @@
+import { AnimalService } from './../services/animal-service.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,6 +10,11 @@ export class AnimalSearchComponent {
   selectedSize: string = '';
   selectedSex: string = '';
   selectedSpecies = { dog: false, cat: false };
+  animalService: AnimalService;
+
+  constructor(animalService: AnimalService) {
+    this.animalService = animalService;
+  }
 
   animals = [
     { name: 'Rex', specie: 'Cachorro', size: 'Grande', sex: 'Macho' },
@@ -18,13 +24,19 @@ export class AnimalSearchComponent {
 
   applyFilters() {
     // Lógica de filtro (exemplo básico)
-    this.animals = this.animals.filter(animal => {
-      return (
-        (!this.selectedSize || animal.size === this.selectedSize) &&
-        (!this.selectedSex || animal.sex === this.selectedSex) &&
-        (this.selectedSpecies.dog && animal.specie === 'Cachorro' || 
-         this.selectedSpecies.cat && animal.specie === 'Gato')
-      );
-    });
+
+    this.animalService.getData().subscribe(resp => {
+      console.log('kk', resp);
+      
+    })
+
+    // this.animals = this.animals.filter(animal => {
+    //   return (
+    //     (!this.selectedSize || animal.size === this.selectedSize) &&
+    //     (!this.selectedSex || animal.sex === this.selectedSex) &&
+    //     (this.selectedSpecies.dog && animal.specie === 'Cachorro' || 
+    //      this.selectedSpecies.cat && animal.specie === 'Gato')
+    //   );
+    // });
   }
 }
