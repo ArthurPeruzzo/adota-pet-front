@@ -1,7 +1,7 @@
 <div class="filter-container">
   <!-- Filtro em Dropdown -->
   <div class="filter-dropdowns d-flex justify-content-center align-items-center gap-3 p-3">
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Espécie</mat-label>
       <mat-select [(ngModel)]="selectedSpecies">
         <mat-option [value]=null>Todas</mat-option>
@@ -10,7 +10,7 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Tamanho</mat-label>
       <mat-select [(ngModel)]="selectedSize">
         <mat-option [value]=null>Todos</mat-option>
@@ -20,7 +20,7 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Sexo</mat-label>
       <mat-select [(ngModel)]="selectedSex">
         <mat-option [value]=null>Ambos</mat-option>
@@ -29,7 +29,7 @@
       </mat-select>
     </mat-form-field>
 
-    <button mat-raised-button color="primary" class="rounded-pill shadow-sm" (click)="applyFilters()">Aplicar Filtros</button>
+    <button mat-raised-button color="primary" class="rounded-pill shadow-sm mb-4" (click)="applyFilters()">Aplicar Filtros</button>
   </div>
 </div>
 
