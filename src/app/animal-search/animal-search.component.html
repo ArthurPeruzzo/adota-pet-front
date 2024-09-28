@@ -4,28 +4,28 @@
     <mat-form-field appearance="fill">
       <mat-label>Espécie</mat-label>
       <mat-select [(ngModel)]="selectedSpecies">
-        <mat-option value="">Todas</mat-option>
-        <mat-option value="dog">Cachorro</mat-option>
-        <mat-option value="cat">Gato</mat-option>
+        <mat-option [value]=null>Todas</mat-option>
+        <mat-option [value]="specie.DOG">Cachorro</mat-option>
+        <mat-option [value]="specie.CAT">Gato</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Tamanho</mat-label>
       <mat-select [(ngModel)]="selectedSize">
-        <mat-option value="">Todos</mat-option>
-        <mat-option value="small">Pequeno</mat-option>
-        <mat-option value="medium">Médio</mat-option>
-        <mat-option value="large">Grande</mat-option>
+        <mat-option [value]=null>Todos</mat-option>
+        <mat-option [value]="size.SMALL">Pequeno</mat-option>
+        <mat-option [value]="size.MEDIUM">Médio</mat-option>
+        <mat-option [value]="size.BIG">Grande</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Sexo</mat-label>
       <mat-select [(ngModel)]="selectedSex">
-        <mat-option value="">Ambos</mat-option>
-        <mat-option value="male">Macho</mat-option>
-        <mat-option value="female">Fêmea</mat-option>
+        <mat-option [value]=null>Ambos</mat-option>
+        <mat-option [value]="sex.MALE">Macho</mat-option>
+        <mat-option [value]="sex.FEMALE">Fêmea</mat-option>
       </mat-select>
     </mat-form-field>
 

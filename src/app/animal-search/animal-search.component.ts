@@ -1,4 +1,8 @@
 import { AnimalResponseJson } from '../services/json/animal-reponse-json';
+import { FilterAnimalDto } from '../shared/dto/filter-animal';
+import { Sex } from '../shared/enums/sex.enum';
+import { Size } from '../shared/enums/size.enum';
+import { Specie } from '../shared/enums/specie.enum';
 import { AnimalService } from './../services/animal-service.service';
 import { Component } from '@angular/core';
 
@@ -8,38 +12,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./animal-search.component.scss']
 })
 export class AnimalSearchComponent {
-  selectedSize: string = '';
-  selectedSex: string = '';
-  selectedSpecies = { dog: false, cat: false };
+  specie = Specie;
+  selectedSpecies?: Specie;
+
+  size = Size;
+  selectedSize?: Size;
+
+  sex = Sex;
+  selectedSex?: Sex;
+  
   animalService: AnimalService;
   animals: AnimalResponseJson[] = [];
+
 
   constructor(animalService: AnimalService) {
     this.animalService = animalService;
   }
 
-  // animals = [
-  //   { name: 'Rex', specie: 'Cachorro', size: 'Grande', sex: 'Macho' },
-  //   { name: 'Luna', specie: 'Gato', size: 'Pequeno', sex: 'Fêmea' }
-  //   // Exemplo de animais fictícios
-  // ];
-
   applyFilters() {
-    // Lógica de filtro (exemplo básico)
+    const filter: FilterAnimalDto = {
+      specie: this.selectedSpecies,
+      size: this.selectedSize,
+      sex: this.selectedSex,
+      page: 0,
+      pageSize: 10
+    }
 
-    this.animalService.findByFilter().subscribe(resp => {
-      this.animals = resp.content;
-      console.log('this.animals :', this.animals);
-      
+    this.animalService.findByFilter(filter).subscribe(resp => {
+      this.animals = resp.content;      
     })
-
-    // this.animals = this.animals.filter(animal => {
-    //   return (
-    //     (!this.selectedSize || animal.size === this.selectedSize) &&
-    //     (!this.selectedSex || animal.sex === this.selectedSex) &&
-    //     (this.selectedSpecies.dog && animal.specie === 'Cachorro' || 
-    //      this.selectedSpecies.cat && animal.specie === 'Gato')
-    //   );
-    // });
   }
 }
