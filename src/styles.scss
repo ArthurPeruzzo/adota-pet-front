@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    --tw-bg-opacity: 1; /* ou o valor desejado */
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}

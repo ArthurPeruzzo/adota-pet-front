@@ -52,3 +52,40 @@
   height: 300px;
   object-fit: cover; /* Ajusta a imagem para cobrir toda a área */
 }
+
+.main-container {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 1200px;
+  border-radius: 8px;
+}
+
+.filter-container {
+  padding: 1rem;
+}
+
+.title-container {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.title-text {
+  font-size: 2.5rem; /* Tamanho do texto */
+  font-weight: 700; /* Negrito */
+  color: #4a90e2; /* Cor agradável para o título */
+  text-transform: uppercase; /* Coloca o texto em maiúsculas */
+  letter-spacing: 1px; /* Espaçamento entre letras */
+  line-height: 1.2; /* Altura da linha para melhor leitura */
+}
+
+@media (max-width: 768px) {
+  .title-text {
+    font-size: 2rem; /* Reduz o tamanho do texto em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .title-text {
+    font-size: 1.8rem; /* Reduz ainda mais o tamanho do texto para telas muito pequenas */
+  }
+}
