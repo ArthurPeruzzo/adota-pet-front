@@ -37,20 +37,23 @@
   <mat-card *ngFor="let animal of animals" class="example-card flex-column d-flex justify-content-between shadow-sm">
     <img mat-card-image [src]="animal.information.photo" alt="Foto da {{animal.name}}" class="animal-image">
     <mat-card-content class="card-content text-left">
+      <div class="pt-3">
+        <p class="location text-muted mb-3">
+          <strong>{{ animal.organization.name | uppercase}}</strong>
+        </p>
+       </div>
       <!-- Nome do animal e ícone de sexo -->
       <div class="d-flex justify-content-between align-items-center gap-2 animal-info">
         <h2 class="animal-name text-primary mb-0">{{ animal.name }}</h2>
         <mat-icon class="material-symbols-outlined">{{ animal.sex | lowercase }}</mat-icon>
       </div>
-      <!-- ONG e Localização -->
-      <p class="location text-muted mb-3">
-        <strong>{{ animal.organization.name }}</strong>, {{ animal.information.location }}
-      </p>
-      <p>
-        {{ animal.information.about }}
-      </p>
+      <div>
+        <p>
+          {{ animal.information.location }}
+        </p>
+      </div>
     </mat-card-content>
-    <mat-card-actions class="card-actions d-flex justify-content-center">
+    <mat-card-actions class="d-flex justify-content-center">
       <button mat-raised-button color="primary" class="adopt-button btn-sm">Quero Adotar</button>
     </mat-card-actions>
   </mat-card>
