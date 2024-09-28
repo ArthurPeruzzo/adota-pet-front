@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { HeaderModule } from './header/header.module';
 import { AnimalSearchModule } from './animal-search/animal-search.module';
+import { FooterModule } from "./footer/footer.module";
 
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import { AnimalSearchModule } from './animal-search/animal-search.module';
     MatMenuModule,
     HeaderModule,
     AnimalSearchModule,
-    HttpClientModule
-  ],
+    HttpClientModule,
+    FooterModule
+],
   providers: [],
   bootstrap: [AppComponent]
 })

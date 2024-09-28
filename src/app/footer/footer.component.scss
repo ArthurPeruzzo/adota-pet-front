@@ -1,0 +1,35 @@
+.footer-container {
+    background-color: #f1f1f1; /* Cor de fundo suave */
+    padding: 1rem 2rem; /* Espaçamento interno */
+    font-size: 0.9rem; /* Tamanho da fonte */
+    border-top: 1px solid #ddd; /* Linha superior */
+
+    margin-top: auto
+  }
+  
+  .footer-left {
+    color: #666; /* Cor de texto */
+  }
+  
+  .footer-link {
+    color: #4a90e2; /* Cor dos links */
+    text-decoration: none; /* Remove sublinhado */
+    transition: color 0.3s ease; /* Transição suave ao passar o mouse */
+  }
+  
+  .footer-link:hover {
+    color: #2a669e; /* Cor do link ao passar o mouse */
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center; /* Centraliza o texto em telas menores */
+    }
+    
+    .footer-right {
+      margin-top: 1rem; /* Espaçamento entre elementos no rodapé */
+      flex-direction: column; /* Coloca os links em coluna */
+    }
+  }
+  
