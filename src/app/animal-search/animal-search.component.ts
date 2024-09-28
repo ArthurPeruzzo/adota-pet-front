@@ -1,3 +1,4 @@
+import { AnimalResponseJson } from '../services/json/animal-reponse-json';
 import { AnimalService } from './../services/animal-service.service';
 import { Component } from '@angular/core';
 
@@ -11,22 +12,24 @@ export class AnimalSearchComponent {
   selectedSex: string = '';
   selectedSpecies = { dog: false, cat: false };
   animalService: AnimalService;
+  animals: AnimalResponseJson[] = [];
 
   constructor(animalService: AnimalService) {
     this.animalService = animalService;
   }
 
-  animals = [
-    { name: 'Rex', specie: 'Cachorro', size: 'Grande', sex: 'Macho' },
-    { name: 'Luna', specie: 'Gato', size: 'Pequeno', sex: 'Fêmea' }
-    // Exemplo de animais fictícios
-  ];
+  // animals = [
+  //   { name: 'Rex', specie: 'Cachorro', size: 'Grande', sex: 'Macho' },
+  //   { name: 'Luna', specie: 'Gato', size: 'Pequeno', sex: 'Fêmea' }
+  //   // Exemplo de animais fictícios
+  // ];
 
   applyFilters() {
     // Lógica de filtro (exemplo básico)
 
-    this.animalService.getData().subscribe(resp => {
-      console.log('kk', resp);
+    this.animalService.findByFilter().subscribe(resp => {
+      this.animals = resp.content;
+      console.log('this.animals :', this.animals);
       
     })
 

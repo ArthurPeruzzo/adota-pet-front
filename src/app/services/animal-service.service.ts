@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Size } from '../shared/enums/size.enum';
 import { Specie } from '../shared/enums/specie.enum';
 import { Sex } from '../shared/enums/sex.enum';
+import { AnimalResponseJson } from './json/animal-reponse-json';
+import { Page } from '../shared/page';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +17,14 @@ export class AnimalService {
 
   constructor(private http: HttpClient) { }
 
-  // Método para fazer uma requisição GET
-  getData(): Observable<any> {
+  findByFilter(): Observable<Page<AnimalResponseJson>> {
     const filter: FilterAnimalDto = {
-        size: Size.SMALL,
-        specie: Specie.DOG,
-        sex: Sex.MALE,
+        // size: null,
+        // specie: Specie.DOG,
+        // sex: Sex.MALE,
         page: 0,
         pageSize: 10
     }
-    return this.http.post(`${this.apiUrl}/find-by-filter`, filter);
+    return this.http.post<Page<AnimalResponseJson>>(`${this.apiUrl}/find-by-filter`, filter);
   }
 }

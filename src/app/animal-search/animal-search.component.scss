@@ -50,3 +50,9 @@
   justify-content: center; /* Centraliza o botão */
   margin: 16px 0; /* Adiciona espaçamento ao redor do botão */
 }
+
+.animal-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover; /* Ajusta a imagem para cobrir toda a área */
+}

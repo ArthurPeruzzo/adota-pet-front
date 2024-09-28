@@ -34,20 +34,20 @@
 </div>
 
 <div class="card-container d-flex flex-wrap justify-content-center gap-3 p-3">
-  <mat-card class="example-card flex-column d-flex justify-content-between shadow-sm">
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu" class="animal-image">
+  <mat-card *ngFor="let animal of animals" class="example-card flex-column d-flex justify-content-between shadow-sm">
+    <img mat-card-image [src]="animal.information.photo" alt="Foto da {{animal.name}}" class="animal-image">
     <mat-card-content class="card-content text-left">
       <!-- Nome do animal e ícone de sexo -->
       <div class="d-flex justify-content-between align-items-center gap-2 animal-info">
-        <h2 class="animal-name text-primary mb-0">Shiba Inu</h2>
-        <mat-icon class="material-symbols-outlined">female</mat-icon>
+        <h2 class="animal-name text-primary mb-0">{{ animal.name }}</h2>
+        <mat-icon class="material-symbols-outlined">{{ animal.sex | lowercase }}</mat-icon>
       </div>
       <!-- ONG e Localização -->
-      <p class="location text-muted mb-3"><strong>Ong São Domingos</strong>, São Paulo, SP</p>
+      <p class="location text-muted mb-3">
+        <strong>{{ animal.organization.name }}</strong>, {{ animal.information.location }}
+      </p>
       <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
+        {{ animal.information.about }}
       </p>
     </mat-card-content>
     <mat-card-actions class="card-actions d-flex justify-content-center">
