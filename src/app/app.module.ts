@@ -11,10 +11,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HeaderModule } from './header/header.module';
 import { AnimalSearchModule } from './animal-search/animal-search.module';
 import { FooterModule } from "./footer/footer.module";
+import { ContactDialogComponent } from './shared/contact-dialog/contact-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ContactDialogComponent,
   ],
   imports: [
     BrowserModule,

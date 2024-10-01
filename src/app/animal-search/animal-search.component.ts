@@ -1,10 +1,12 @@
 import { AnimalResponseJson } from '../services/json/animal-reponse-json';
+import { ContactDialogComponent } from '../shared/contact-dialog/contact-dialog.component';
 import { FilterAnimalDto } from '../shared/dto/filter-animal';
 import { Sex } from '../shared/enums/sex.enum';
 import { Size } from '../shared/enums/size.enum';
 import { Specie } from '../shared/enums/specie.enum';
 import { AnimalService } from './../services/animal-service.service';
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-animal-search',
@@ -24,9 +26,13 @@ export class AnimalSearchComponent {
   animalService: AnimalService;
   animals: AnimalResponseJson[] = [];
 
+  dialog: MatDialog;
 
-  constructor(animalService: AnimalService) {
+
+  constructor(animalService: AnimalService,
+              dialog: MatDialog) {
     this.animalService = animalService;
+    this.dialog = dialog;
   }
 
   applyFilters() {
@@ -41,5 +47,11 @@ export class AnimalSearchComponent {
     this.animalService.findByFilter(filter).subscribe(resp => {
       this.animals = resp.content;      
     })
+  }
+
+  openDialog(): void {
+    this.dialog.open(ContactDialogComponent, {
+      width: '400px',
+    });
   }
 }
